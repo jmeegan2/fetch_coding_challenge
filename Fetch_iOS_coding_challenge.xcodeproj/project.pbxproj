@@ -14,6 +14,11 @@
 		11C56B862A3277E20088625F /* Fetch_iOS_coding_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C56B852A3277E20088625F /* Fetch_iOS_coding_challengeTests.swift */; };
 		11C56B902A3277E20088625F /* Fetch_iOS_coding_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C56B8F2A3277E20088625F /* Fetch_iOS_coding_challengeUITests.swift */; };
 		11C56B922A3277E20088625F /* Fetch_iOS_coding_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C56B912A3277E20088625F /* Fetch_iOS_coding_challengeUITestsLaunchTests.swift */; };
+		11C56BA32A3278B30088625F /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C56BA22A3278B30088625F /* Meal.swift */; };
+		11C56BA52A3278C30088625F /* MealListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C56BA42A3278C30088625F /* MealListViewModel.swift */; };
+		11C56BA82A3278E00088625F /* MealDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C56BA72A3278E00088625F /* MealDetailViewModel.swift */; };
+		11C56BAA2A3278F10088625F /* MealListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C56BA92A3278F10088625F /* MealListView.swift */; };
+		11C56BAC2A3279040088625F /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C56BAB2A3279040088625F /* MealDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		11C56B8B2A3277E20088625F /* Fetch_iOS_coding_challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Fetch_iOS_coding_challengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11C56B8F2A3277E20088625F /* Fetch_iOS_coding_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch_iOS_coding_challengeUITests.swift; sourceTree = "<group>"; };
 		11C56B912A3277E20088625F /* Fetch_iOS_coding_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch_iOS_coding_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		11C56BA22A3278B30088625F /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		11C56BA42A3278C30088625F /* MealListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListViewModel.swift; sourceTree = "<group>"; };
+		11C56BA72A3278E00088625F /* MealDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewModel.swift; sourceTree = "<group>"; };
+		11C56BA92A3278F10088625F /* MealListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListView.swift; sourceTree = "<group>"; };
+		11C56BAB2A3279040088625F /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +84,9 @@
 		11C56B682A3277E10088625F = {
 			isa = PBXGroup;
 			children = (
+				11C56BA12A3278250088625F /* Models */,
+				11C56B9F2A3278100088625F /* ViewModels */,
+				11C56B9E2A3278060088625F /* Views */,
 				11C56B732A3277E10088625F /* Fetch_iOS_coding_challenge */,
 				11C56B842A3277E20088625F /* Fetch_iOS_coding_challengeTests */,
 				11C56B8E2A3277E20088625F /* Fetch_iOS_coding_challengeUITests */,
@@ -125,6 +138,32 @@
 				11C56B912A3277E20088625F /* Fetch_iOS_coding_challengeUITestsLaunchTests.swift */,
 			);
 			path = Fetch_iOS_coding_challengeUITests;
+			sourceTree = "<group>";
+		};
+		11C56B9E2A3278060088625F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11C56BA92A3278F10088625F /* MealListView.swift */,
+				11C56BAB2A3279040088625F /* MealDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		11C56B9F2A3278100088625F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				11C56BA42A3278C30088625F /* MealListViewModel.swift */,
+				11C56BA72A3278E00088625F /* MealDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		11C56BA12A3278250088625F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11C56BA22A3278B30088625F /* Meal.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +297,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				11C56B772A3277E10088625F /* ContentView.swift in Sources */,
+				11C56BA52A3278C30088625F /* MealListViewModel.swift in Sources */,
+				11C56BA32A3278B30088625F /* Meal.swift in Sources */,
+				11C56BA82A3278E00088625F /* MealDetailViewModel.swift in Sources */,
+				11C56BAC2A3279040088625F /* MealDetailView.swift in Sources */,
 				11C56B752A3277E10088625F /* Fetch_iOS_coding_challengeApp.swift in Sources */,
+				11C56BAA2A3278F10088625F /* MealListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
