@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var mealDetailViewModel = MealDetailViewModel() // Create an instance of MealDetailViewModel
+
     var body: some View {
-        MealListView() // Display the MealListView
+        MealListView()
+                .environmentObject(mealDetailViewModel)
+        }
     }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

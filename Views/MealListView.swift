@@ -8,27 +8,22 @@
 import SwiftUI
 import Combine // Add the Combine framework for @ObservedObject and @Published
 
+import SwiftUI
+
 struct MealListView: View {
     @ObservedObject private var viewModel = MealListViewModel()
-    @State private var selectedMealID: String?
-    private var mealDetailViewModel = MealDetailViewModel() // Create an instance of MealDetailViewModel
+    @EnvironmentObject private var mealDetailViewModel: MealDetailViewModel // Access the MealDetailViewModel as an environment object
 
     var body: some View {
-        List(viewModel.desserts, id: \.id) { dessert in
-            Text(dessert.strMeal)
-                .onTapGesture {
-                    selectedMealID = dessert.idMeal // Store the selected meal ID
-                    fetchMealDetails(for: selectedMealID) // Call fetchMealDetails
+        NavigationView {
+            List(viewModel.desserts, id: \.id) { dessert in
+                NavigationLink(destination: MealDetailView(mealID: dessert.idMeal)) {
+                    Text(dessert.strMeal)
                 }
+            }
+            .onAppear(perform: viewModel.fetchDesserts)
+            .navigationBarTitle("Meals")
         }
-        .onAppear(perform: viewModel.fetchDesserts)
-    }
-    
-    private func fetchMealDetails(for mealID: String?) {
-        guard let mealID = mealID else {
-            return
-        }
-        mealDetailViewModel.fetchMealDetails(for: mealID) // Call fetchMealDetails on the mealDetailViewModel
     }
 }
 
