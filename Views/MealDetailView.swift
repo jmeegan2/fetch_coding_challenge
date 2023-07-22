@@ -21,7 +21,7 @@ struct MealDetailView: View {
         mealDetailViewModel.fetchMealDetails(for: mealID)
     }
 
-    @ViewBuilder // Use @ViewBuilder to conditionally display the content
+    @ViewBuilder
     private var content: some View {
         if let meal = mealDetailViewModel.specificMeal.first {
             VStack {
@@ -36,14 +36,12 @@ struct MealDetailView: View {
 
                 Text("Ingredients:")
                     .font(.headline)
-                VStack(alignment: .leading) {
-                    if let ingredient1 = meal.strIngredient1, !ingredient1.isEmpty {
-                        Text("\(ingredient1) - Amount: \(meal.strMeasure1 ?? "")")
+                
+                // Display ingredients and measures as a list
+                List {
+                    ForEach(meal.ingredients, id: \.self) { ingredient in
+                        Text(ingredient)
                     }
-                    if let ingredient2 = meal.strIngredient2, !ingredient2.isEmpty {
-                        Text("\(ingredient2) - Amount: \(meal.strMeasure2 ?? "")")
-                    }
-                    // Add more if needed for other ingredients
                 }
                 .padding()
             }
@@ -51,5 +49,6 @@ struct MealDetailView: View {
             Text("Fetching meal details...") // Show a loading message while fetching data
         }
     }
+
 
 }
